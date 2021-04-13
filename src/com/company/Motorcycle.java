@@ -1,24 +1,31 @@
 package com.company;
 
 public class Motorcycle extends Vehicle implements Costable {
-    private int cost;
     private int maxSpeed;
-    public Motorcycle (int wheelCount, int maxSpeed, int cost){
+    private int cost;
+    private String model;
+
+    public Motorcycle(int wheelCount, int maxSpeed, int cost, String model) {
+        super(wheelCount);
         this.wheelCount = wheelCount;
         this.maxSpeed = maxSpeed;
         this.cost = cost;
-
-
+        this.model = model;
     }
 
     @Override
     public void printInfo() {
-        System.out.println("Транспортное средство: Мотоцикт. Кол-во колес: " + this.wheelCount + ". Максимальная скорость: " + this.maxSpeed + "км/ч.");
+        System.out.println("Транспортное средство:" + "\n" +
+                "МОТОЦИКЛ" + "\n" +
+                "Модель - " + this.model + "\n" +
+                "Кол-во колес: " + this.wheelCount + "\n" +
+                "Максимальная скорость: " + this.maxSpeed + " км/ч");
 
     }
 
     @Override
-    public void getCost() {
-        System.out.println("Стоимость = " + this.cost);
+    public int getCost() {
+        System.out.println("Стоимость = " + cost + " USD");
+        return cost;
     }
 }
